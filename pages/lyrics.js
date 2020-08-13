@@ -4,9 +4,16 @@ import Typography from '@material-ui/core/Typography'
 
 import { useParams } from "react-router-dom";
 
-export default function Lyrics() {
+export default function LyricPage() {
 
   let { song, artist } = useParams();
+
+  return <Lyrics song={song} artist={artist} />
+
+}
+
+function Lyrics({song, artist}) {
+
 
   let api = `https://api.lyrics.ovh/v1/${artist}/${song}`;
 
